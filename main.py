@@ -43,6 +43,8 @@ class ResultHandler(BaseHandler):#peticionyenvio
             n = "blank"
         if not e:
             e = "blank"
+        if "<script>" in message: 
+            return self.write("Good try!)")    
 
         msg = Message(name=n, email=e, text=t, created=cr)
         msg.put()
